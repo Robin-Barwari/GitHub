@@ -1,99 +1,110 @@
-// const names = document.querySelector(".names");
-const amirImage = new Image(100, 200)
 
-function getRandomStudent() {
-    return students[Math.floor(Math.random() * students.length)];
-}
+// function getRandomStudent() {
+//     return students[Math.floor(Math.random() * students.length)];
+// }
 
-let randomStudent = getRandomStudent();
+// let randomStudent = getRandomStudent();
 
 let students = [
     {
         name: "Amir",
         img: "./img/amirImage.jpeg",
         options: [
-            Albin,
-            Hugo,
-            Robin,
-            Ammir
+            "Albin",
+            "Hugo",
+            "Robin",
+            "Ammir"
         ],
-        Answer: Amir
+        Answer: "Amir"
     },
     {
         name: "Robin",
         img: "./img/robinImage.jpeg",
         options: [
-            Robin,
-            Charlie,
-            Amir,
-            Samuel
+            "Robin",
+            "Charlie",
+            "Amir",
+            "Samuel"
         ],
-        Answer: Robin
+        Answer: "Robin"
     },
     {
         name: "Albin",
         img: "./img/albinImage.jpeg",
         options: [
-            Markus,
-            Charlie,
-            Albin,
-            Hugo
+            "Markus",
+            "Charlie",
+            "Albin",
+            "Hugo"
         ],
-        Answer: Albin
+        Answer: "Albin"
     },
     {
         name: "Markus",
         img: "./img/markusImage.jpeg",
         options: [
-            Robin,
-            Markus,
-            Mathias,
-            Samuel
+            "Robin",
+            "Markus",
+            "Mathias",
+            "Samuel"
         ],
-        Answer: Markus
+        Answer: "Markus"
     },
     {
         name: "Hugo",
         img: "./img/hugoImage.jpeg",
         options: [
-            Hugo,
-            Amir,
-            Albin,
-            Mathias
+            "Hugo",
+            "Amir",
+            "Albin",
+            "Mathias"
         ],
-        Answer: Hugo
+        Answer: "Hugo"
     },
     {
         name: "Mathias",
         img: "./img/mathiasImage.jpeg",
         options: [
-            Charlie,
-            Mathias,
-            Hugo,
-            Samuel
+            "Charlie",
+            "Mathias",
+            "Hugo",
+            "Samuel"
         ],
-        Answer: Mathias
+        Answer: "Mathias"
     },
     {
         name: "Samuel",
         img: "./img/samuelImage.jpeg",
         options: [
-            Samuel,
-            Albin,
-            Markus,
-            Amir
+            "Samuel",
+            "Albin",
+            "Markus",
+            "Amir"
         ],
-        Answer: Samuel
+        Answer: "Samuel"
     },
     {
         name: "Charlie",
         img: "./img/charlieImage.jpeg",
         options: [
-            Mathias,
-            Hugo,
-            Robin,
-            Charlie
+            "Mathias",
+            "Hugo",
+            "Robin",
+            "Charlie"
         ],
-        Answer: Charlie
+        Answer: "Charlie"
     }
 ]
+
+// variabel för att starta frågan (börjar från 0)
+const lastQuestion = students.length - 1;
+
+let runningQuestion = 0;
+
+// läser in bilden + alternativ
+function renderQuestion() {
+    let q = questions[runningQuestion];
+
+    img.innerHTML = "<img src=" + q.img + ">";
+    options.innerHTML = q.options;
+}
