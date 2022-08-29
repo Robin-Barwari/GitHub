@@ -35,7 +35,7 @@ body {
 
 header {
   width: 100vw;
-  background-color: #222;
+  background-color: #2222;
   padding: 15px;
 }
 </style>
