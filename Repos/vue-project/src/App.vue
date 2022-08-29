@@ -8,6 +8,7 @@ const playingField = ref([
   [''], [''], [''],
   [''], [''], [''],
 ])
+
 // calculate the winner by matching row
 const calculateWinner = (squares) => {
   const lines = [
@@ -61,7 +62,7 @@ const Restart = () => {
     <div class="flex flex-col items-center mb-8">
       <div v-for="(row, x) in playingField" :key="x" class="flex">
         <div v-for="(cell, y) in row" :key="y" @click="MakeMove(x, y)"
-          :class="`border border-white w-24 h-24 hover:bg-blue flex items-center justify-center material-icons-outlined text-4xl cursor-pointer ${cell === 'X' ? 'text-pink-500' : 'text-blue-400'}`">
+          :class="`border border-black w-24 h-24 hover:bg-blue flex items-center justify-center material-icons-outlined text-4xl cursor-pointer ${cell === 'X' ? 'text-pink-500' : 'text-blue-400'}`">
           {{ cell === 'X' ? 'close' : cell === 'O' ? 'circle' : '' }}
         </div>
       </div>
