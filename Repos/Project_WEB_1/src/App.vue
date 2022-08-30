@@ -1,14 +1,5 @@
 <template>
-  <div>
-    <header>
-      <Navbar />
-      <!-- <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav> -->
-    </header>
-  </div>
-  <RouterView />
+
 </template>
 
 <script>
