@@ -1,21 +1,33 @@
 <script setup>
 import Navbar from './components/Navbar.vue';
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router';
 import Home from './components/Routers/Home.vue';
+import Carousel from './components/Carousel.vue'
+import CarouselItem from './components/CarouselItem.vue';
 </script>
 
 <template>
   <Navbar />
+  <carousel :slides="slides"></carousel>
+
   <Home />
 </template>
 
 <script>
 export default {
   name: 'app',
-  data() {
-    return {
-    };
-  }
+  components: { Carousel },
+  data: () => ({
+    slides: [
+      "../public/overwatch.jpeg",
+      "../public/csgo.webp",
+      "../public/hogwarts.jpeg",
+      "../public/r6s.jpeg",
+      "../public/rocket.jpeg",
+      "../public/Valorant.webp",
+
+    ]
+  })
 }
 </script>
 
@@ -35,5 +47,9 @@ header {
   width: 100vw;
   background-color: #222;
   padding: 15px;
+}
+
+img {
+  width: 100%;
 }
 </style>
