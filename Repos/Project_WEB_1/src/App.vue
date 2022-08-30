@@ -26,7 +26,7 @@ export default {
 
 body {
   font-family: 'montserrat', sans-serif;
-  background-color: rgb(240, 130, 45);
+  background-color: rgb(241, 130, 45);
 }
 
 header {
