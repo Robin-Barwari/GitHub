@@ -1,14 +1,18 @@
-<template>
+<script setup>
+import Navbar from './components/Navbar.vue';
+import { RouterLink, RouterView } from 'vue-router'
+</script>
 
+<template>
+  <Navbar />
 </template>
 
 <script>
-import { RouterLink, RouterView } from 'vue-router'
-import Navbar from './components/Navbar';
 export default {
   name: 'app',
-  components: {
-    Navbar
+  data() {
+    return {
+    };
   }
 }
 </script>
@@ -22,6 +26,7 @@ export default {
 
 body {
   font-family: 'montserrat', sans-serif;
+  background-color: rgb(241, 130, 45);
 }
 
 header {
