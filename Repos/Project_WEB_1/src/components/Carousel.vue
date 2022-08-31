@@ -1,6 +1,8 @@
 <template>
     <div class="carousel">
         <div class="carousel-inner">
+            <carousel-indicator v-if="indicators" :total="slides.length" :current-index="currentSlide"
+                @switch="switchSlide($event)"></carousel-indicator>
             <carousel-item v-for="(slide, index) in slides" :slide="slide" :key="`item-${index}`"
                 :current-slide="currentSlide" :index="index"></carousel-item>
             <carousel-controls @prev="prev" @next="next"></carousel-controls>
@@ -13,36 +15,83 @@
 <script>
 import CarouselItem from './CarouselItem.vue';
 import CarouselControls from './CarouselControls.vue';
+import CarouselIndicator from './CarouselIndicator.vue';
 
 export default {
-    props: ['slides'],
-    components: { CarouselItem, CarouselControls },
+    props: {
+        slides: {
+            type: Array,
+            required: true,
+        },
+        controls: {
+            type: Boolean,
+            default: false,
+        },
+        indicators: {
+            type: Boolean,
+            default: false,
+        },
+        interval: {
+            type: Number,
+            default: 5000,
+        },
+    },
+    components: { CarouselItem, CarouselControls, CarouselIndicator },
     data: () => ({
-        currentSlide: 1,
-        slideInterval: null
+        currentSlide: 0,
+        slideInterval: null,
+        direction: "right",
     }),
     methods: {
         setCurrentSlide(index) {
             this.currentSlide = index;
         },
-        prev() {
-            const index = this.currentSlide > 0 ? this.currentSlide - 1 : this.slides.Length - 1;
+        prev(step = -1) {
+            const index =
+                this.currentSlide > 0
+                    ? this.currentSlide + step
+                    : this.slides.length - 1;
             this.setCurrentSlide(index);
+            this.direction = "left";
+            this.startSlideTimer();
         },
-        next() {
-            const index = this.currentSlide < this.slides.Length - 1 ? this.currentSlide + 1 : 0;
+        _next(step = 1) {
+            const index =
+                this.currentSlide < this.slides.length - 1
+                    ? this.currentSlide + step
+                    : 0;
             this.setCurrentSlide(index);
-        }
+            this.direction = "right";
+        },
+        next(step = 1) {
+            this._next(step);
+            this.startSlideTimer();
+        },
+        startSlideTimer() {
+            this.stopSlideTimer();
+            this.slideInterval = setInterval(() => {
+                this._next();
+            }, this.interval);
+        },
+        stopSlideTimer() {
+            clearInterval(this.slideInterval);
+        },
+        switchSlide(index) {
+            const step = index - this.currentSlide;
+            if (step > 0) {
+                this.next(step);
+            } else {
+                this.prev(step);
+            }
+        },
     },
     mounted() {
-        this.slideInterval = setInterval(() => {
-            this.next();
-        }, 3000)
+        this.startSlideTimer();
     },
     beforeUnmount() {
-        clearInterval(this.slideInterval);
-    }
-}
+        this.stopSlideTimer();
+    },
+};
 </script>
 
 <style scoped>

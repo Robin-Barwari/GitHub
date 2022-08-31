@@ -1,21 +1,20 @@
 <script setup>
 import Navbar from './components/Navbar.vue';
-import { RouterLink, RouterView } from 'vue-router';
+// import { RouterLink, RouterView } from 'vue-router';
 import Home from './components/Routers/Home.vue';
 import Carousel from './components/Carousel.vue'
-import CarouselItem from './components/CarouselItem.vue';
 </script>
 
 <template>
   <Navbar />
-  <carousel :slides="slides"></carousel>
+  <Carousel :slides="slides" :interval="6000" controls indicators></Carousel>
 
   <Home />
 </template>
 
 <script>
 export default {
-  name: 'app',
+  name: 'App',
   components: { Carousel },
   data: () => ({
     slides: [
@@ -26,9 +25,9 @@ export default {
       "../public/rocket.jpeg",
       "../public/Valorant.webp",
 
-    ]
-  })
-}
+    ],
+  }),
+};
 </script>
 
 <style>
