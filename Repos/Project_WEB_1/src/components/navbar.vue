@@ -2,49 +2,12 @@
     <nav>
         <div class="menu-item"><a href="#">Home</a></div>
         <div class="menu-item"><a href="#">About</a></div>
-        <Dropdown title="Games" :items="Games" />
+        <div class="menu-item"><a href="#">Carry</a></div>
         <div class="menu-item"><a href="#">Contact</a></div>
     </nav>
 </template>
   
 <script>
-import Dropdown from './Dropdown.vue';
-export default {
-    name: 'navbar',
-    components: {
-        Dropdown
-    },
-    data() {
-        return {
-            Games: [
-                {
-                    title: 'R6S',
-                    link: '#'
-                },
-                {
-                    title: 'Overwatch',
-                    link: '#'
-                },
-                {
-                    title: 'Valorant',
-                    link: '#'
-                },
-                {
-                    title: 'Rocket League',
-                    link: '#'
-                },
-                {
-                    title: 'Hogwarts Legacy',
-                    link: '#'
-                },
-                {
-                    title: 'CS:GO',
-                    link: '#'
-                }
-            ]
-        }
-    }
-}
 </script>
   
 <style>
