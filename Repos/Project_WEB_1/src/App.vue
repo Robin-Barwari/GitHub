@@ -1,15 +1,13 @@
 <script setup>
 import Navbar from './components/Navbar.vue';
-// import { RouterLink, RouterView } from 'vue-router';
-import Home from './components/Routers/Home.vue';
+import { RouterLink, RouterView } from 'vue-router';
 import Carousel from './components/Carousel.vue'
 </script>
 
 <template>
   <Navbar />
+  <RouterView />
   <Carousel :slides="slides" :interval="6000" controls indicators></Carousel>
-
-  <Home />
 </template>
 
 <script>
