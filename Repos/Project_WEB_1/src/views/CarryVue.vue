@@ -12,15 +12,15 @@
                 <i v-if="ascending" class="fa fa-sort-up"></i>
                 <i v-else class="fa fa-sort-down"></i>
             </button>
-            <input type="number" v-model="maxPrice" id="price-input"></input>
-            <input type="text" v-model="searchValue" placeholder="Search Game" id="search-input"></input>
+            <input type="number" v-model="maxPrice" id="price-input" />
+            <input type="text" v-model="searchValue" placeholder="Search Game" id="search-input" />
             <i class="fa fa-search"></i>
         </div>
 
         <!-- Where the array of recipes get rendered as cards -->
         <div id="providers-container">
             <div class="card" v-for="provider in filteredProviders" :key="provider.title">
-                <img :src="provider.img" class="provider-image"></img>
+                <img :src="provider.img" class="provider-image">
                 <div class="content">
                     <h1 class="provider-title">
                         {{ provider.title }}
