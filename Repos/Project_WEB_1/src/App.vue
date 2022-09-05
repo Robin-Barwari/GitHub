@@ -16,12 +16,12 @@ export default {
   components: { Carousel },
   data: () => ({
     slides: [
-      "../public/overwatch.jpeg",
-      "../public/csgo.webp",
-      "../public/hogwarts.jpeg",
-      "../public/r6s.jpeg",
-      "../public/rocket.jpeg",
-      "../public/Valorant.webp",
+      "/overwatch.jpeg",
+      "/csgo.webp",
+      "/hogwarts.jpeg",
+      "/r6s.jpeg",
+      "/rocket.jpeg",
+      "/Valorant.webp",
 
     ],
   }),

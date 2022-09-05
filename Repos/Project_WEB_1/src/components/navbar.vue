@@ -2,12 +2,16 @@
     <nav>
         <div class="menu-item"><a href="#">Home</a></div>
         <div class="menu-item"><a href="#">About</a></div>
-        <div class="menu-item"><a href="#">Carry</a></div>
+
+
+        <!-- <div class="menu-item"><a href="#">Carry</a></div> -->
         <div class="menu-item"><a href="#">Contact</a></div>
     </nav>
 </template>
   
 <script>
+import CarryVueVue from '../views/CarryVue.vue';
+
 </script>
   
 <style>
