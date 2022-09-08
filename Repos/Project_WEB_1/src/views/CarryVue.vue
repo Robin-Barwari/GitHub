@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div class="carry-view">
         <h2>My Recipes:</h2>
 
         <!-- Bar containing all sort inputs -->
@@ -145,7 +145,7 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
+.carry-view {
     background: #fff;
     border-radius: 4px;
     padding: 20px;

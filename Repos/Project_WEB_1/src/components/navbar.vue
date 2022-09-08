@@ -1,8 +1,16 @@
+<script setup>
+import { RouterLink } from 'vue-router';
+</script>
+
 <template>
     <nav>
-        <div class="menu-item"><a href="#">Home</a></div>
+        <div class="menu-item">
+            <RouterLink to="/">Home</RouterLink>
+        </div>
         <div class="menu-item"><a href="#">About</a></div>
-        <div class="menu-item"><a href="#">Carry</a></div>
+        <div class="menu-item">
+            <RouterLink to="/carry">Carry</RouterLink>
+        </div>
         <div class="menu-item"><a href="#">Contact</a></div>
     </nav>
 </template>

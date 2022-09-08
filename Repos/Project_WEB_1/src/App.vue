@@ -5,10 +5,8 @@ import Carousel from './components/Carousel.vue'
 </script>
 
 <template>
-  <div id="app">
-    <Navbar />
-    <router-view />
-  </div>
+  <Navbar />
+  <router-view />
   <Carousel :slides="slides" :interval="6000" controls indicators></Carousel>
 </template>
 
