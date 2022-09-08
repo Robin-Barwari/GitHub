@@ -1,12 +1,12 @@
 <template>
     <div class="carry-view">
-        <h2>My Recipes:</h2>
+        <h2>My Providers:</h2>
 
         <!-- Bar containing all sort inputs -->
         <div id="sort-bar">
             <select name="sortBy" id="select" v-model="sortBy">
                 <option value="alphabetically">Alphabetically</option>
-                <option value="price">Price</option>
+                <option value="Price">Price</option>
             </select>
             <button v-on:click="ascending = !ascending" class="sort-button">
                 <i v-if="ascending" class="fa fa-sort-up"></i>
@@ -18,12 +18,12 @@
         </div>
 
         <!-- Where the array of recipes get rendered as cards -->
-        <div id="providers-container">
-            <div class="card" v-for="provider in filteredProviders" :key="provider.title">
+        <div id="provider-container">
+            <div class="card" v-for="provider in filteredProviders" :key="provider.titelGame">
                 <img :src="provider.img" class="provider-image">
                 <div class="content">
                     <h1 class="provider-title">
-                        {{ provider.title }}
+                        {{ provider.titelGame }}
                     </h1>
                     <p>
                         {{ provider.description }}
@@ -31,7 +31,7 @@
                     <span class="rank-span">
 
                         <h3 class="rank-title">
-                            Rank:
+                            Ranks:
                         </h3>
                         <ol class="rank-list">
                             <li v-for="rank in provider.ranks">- {{ rank }}</li>
@@ -39,10 +39,10 @@
                     </span>
 
                     <h3>
-                        Cooking Time:
+                        Price:
                     </h3>
                     <p>
-                        {{ provider.price }}
+                        {{ provider.Price }} €
                     </p>
 
                 </div>
@@ -56,41 +56,45 @@
 export default {
     data() {
         return {
+            ascending: true,
+            sortBy: 'alphabetically',
+            searchValue: '',
+            maxPrice: null,
             providers: [
                 {
                     titelGame: 'Overwatch',
                     contactInfo: 'ILike2Win@carry.com',
-                    rank: 'Grand Master',
-                    Price: '20€',
-                    img: '../public/overwatch_carry.jpeg',
+                    ranks: ['Grand Master'],
+                    Price: '20',
+                    img: '/overwatch_carry.jpeg',
                 },
                 {
                     titelGame: 'Rainbow Six Siege',
                     contactInfo: 'GG2EZ@carry.com',
-                    rank: 'Diamond II',
-                    Price: '35€',
-                    img: '../public/r6s_carry.webp',
+                    ranks: ['Diamond II'],
+                    Price: '35',
+                    img: '/r6s_carry.webp',
                 },
                 {
                     titelGame: 'CS:GO',
                     contactInfo: 'Putin_nr_1@carry.com',
-                    rank: 'Gold Nova II',
-                    Price: '5€',
-                    img: '../public/csgo_carry.webp',
+                    ranks: ['Gold Nova II'],
+                    Price: '5',
+                    img: '/csgo_carry.webp',
                 },
                 {
                     titelGame: 'Rocket League',
                     contactInfo: 'I_bad_fotballs@carry.com',
-                    rank: 'Platinum III',
-                    Price: '15€',
-                    img: '../public/rocket_carry.jpeg',
+                    ranks: ['Platinum III'],
+                    Price: '15',
+                    img: '/rocket_carry.jpeg',
                 },
                 {
                     titelGame: 'Valorant',
                     contactInfo: 'W3ndig0@carry.com',
-                    rank: 'Silver II',
-                    Price: '150€',
-                    img: '../public/valorant_carry.jpg',
+                    ranks: ['Silver II'],
+                    Price: '150',
+                    img: '/valorant_carry.jpg',
                 },
             ]
         };
@@ -102,7 +106,7 @@ export default {
             // Process search input
             if (this.searchValue != '' && this.searchValue) {
                 tempProviders = tempProviders.filter((item) => {
-                    return item.title
+                    return item.titelGame
                         .toUpperCase()
                         .includes(this.searchValue.toUpperCase())
                 })
@@ -111,13 +115,13 @@ export default {
             // Filter out by price
             if (this.maxPrice)
                 tempProviders = tempProviders.filter((item) => {
-                    return (item.price <= this.maxPrice)
+                    return (item.Price <= this.maxPrice)
                 })
 
             // Sort by alphabetical order
             tempProviders = tempProviders.sort((a, b) => {
                 if (this.sortBy == 'alphabetically') {
-                    let fa = a.title.toLowerCase(), fb = b.title.toLowerCase()
+                    let fa = a.titelGame.toLowerCase(), fb = b.titelGame.toLowerCase()
 
                     if (fa < fb) {
                         return -1
@@ -128,8 +132,8 @@ export default {
                     return 0
 
                     // Sort by cooking time
-                } else if (this.sortBy == 'price') {
-                    return a.price - b.price
+                } else if (this.sortBy == 'Price') {
+                    return a.Price - b.Price
                 }
             })
 
@@ -145,6 +149,12 @@ export default {
 </script>
 
 <style lang="scss">
+// body {
+//     background: #20262E;
+//     padding: 20px;
+//     font-family: Helvetica;
+// }
+
 .carry-view {
     background: #fff;
     border-radius: 4px;

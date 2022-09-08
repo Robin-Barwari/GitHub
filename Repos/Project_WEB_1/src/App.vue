@@ -2,15 +2,15 @@
 import Navbar from './components/Navbar.vue';
 import { RouterLink, RouterView } from 'vue-router';
 import Carousel from './components/Carousel.vue'
+import TheHome from './views/TheHome.vue';
 </script>
 
 <template>
-  <Navbar />
-  <router-view />
-  <Carousel :slides="slides" :interval="6000" controls indicators></Carousel>
+  <TheHome />
+
 </template>
 
-<script>
+<!-- <script>
 export default {
   name: 'App',
   components: { Carousel },
@@ -49,4 +49,4 @@ header {
 img {
   width: 100%;
 }
-</style>
+</style> -->
