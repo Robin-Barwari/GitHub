@@ -1,24 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import TheHome from '../views/TheHome.vue'
-import CarryVue from '../views/CarryVue.vue'
-import Router from 'vue-router'
-import Vue from 'vue'
+// import CarryVue from '../views/CarryVue.vue'
 
-Vue.use(Router)
-export default new Router({
-  mode: 'history',
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
       name: "home",
       component: TheHome
     },
-    {
-      path: '/CarryVue',
-      name: "carry",
-      component: CarryVue
-    },
+    // {
+    //   path: '/',
+    //   name: "carry",
+    //   component: CarryVue
+    // }
   ]
 })
 
-// export default router
+export default router
