@@ -1,6 +1,6 @@
 <template>
     <div class="carry-view">
-        <h2>My Providers:</h2>
+        <h2 style="text-align: center;">My Providers:</h2>
 
         <!-- Bar containing all sort inputs -->
         <div id="sort-bar">
@@ -9,15 +9,15 @@
                 <option value="Price">Price</option>
             </select>
             <button v-on:click="ascending = !ascending" class="sort-button">
+                Sort
                 <i v-if="ascending" class="fa fa-sort-up"></i>
                 <i v-else class="fa fa-sort-down"></i>
             </button>
-            <input type="number" v-model="maxPrice" id="price-input" />
             <input type="text" v-model="searchValue" placeholder="Search Game" id="search-input" />
             <i class="fa fa-search"></i>
         </div>
 
-        <!-- Where the array of recipes get rendered as cards -->
+        <!-- Where the array of games get rendered as cards -->
         <div id="provider-container">
             <div class="card" v-for="provider in filteredProviders" :key="provider.titelGame">
                 <img :src="provider.img" class="provider-image">
@@ -131,7 +131,7 @@ export default {
                     }
                     return 0
 
-                    // Sort by cooking time
+                    // Sort by price
                 } else if (this.sortBy == 'Price') {
                     return a.Price - b.Price
                 }
@@ -149,11 +149,9 @@ export default {
 </script>
 
 <style lang="scss">
-// body {
-//     background: #20262E;
-//     padding: 20px;
-//     font-family: Helvetica;
-// }
+body {
+    padding: 0px;
+}
 
 .carry-view {
     background: #fff;
@@ -172,7 +170,7 @@ h3 {
     font-size: 16px;
 }
 
-#recipe-container {
+#game-container {
     display: flex;
     flex-wrap: wrap;
 }
@@ -181,35 +179,35 @@ h3 {
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.3) 0 5px 10px;
     margin: 10px;
-    width: 40%;
+    width: 30%;
 }
 
 .content {
     padding: 30px;
 }
 
-.recipte-title {
+.game-title {
     font-size: 18px;
     font-weight: 600;
 }
 
 
-.ingredient-title {
+.rank-title {
     font-size: 16px;
     font-weight: 600;
     margin-top: 20px;
 }
 
-.recipe-image {
-    width: 100%;
-    max-height: 200px;
+.game-image {
+    width: 5%;
+    max-height: 75px;
     padding: -10px -10px;
     ;
 }
 
 #sort-bar {
     width: 80%;
-    // height: 80px;
+    height: 50px;
     margin-left: 10px;
     background-color: #f2e0c1;
     display: flex;
@@ -219,8 +217,8 @@ h3 {
 
 .sort-button {
     background-color: rgba(0, 0, 0, 0);
-    border: none;
-    // height: 50px;
+    border: 1px;
+    height: 50px;
     height: 100%;
     width: 50px;
 
@@ -235,7 +233,7 @@ h3 {
 }
 
 #ascending-icon {
-    // height: 30px;
+    height: 30px;
     height: 100%;
     width: 30px;
 }
@@ -245,7 +243,7 @@ h3 {
     border: none;
 }
 
-#cooking-time-input {
+#price-input {
     width: 30px;
     margin-right: 10px;
 }

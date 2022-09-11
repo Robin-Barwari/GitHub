@@ -1,52 +1,33 @@
 <script setup>
 import Navbar from './components/Navbar.vue';
-import { RouterLink, RouterView } from 'vue-router';
-import Carousel from './components/Carousel.vue'
 import TheHome from './views/TheHome.vue';
 </script>
 
 <template>
+  <Navbar />
   <TheHome />
-
+  <footer>
+    <p>{{ footerText}}</p>
+  </footer>
 </template>
 
-<!-- <script>
+<script>
 export default {
-  name: 'App',
-  components: { Carousel },
-  data: () => ({
-    slides: [
-      "/overwatch.jpeg",
-      "/csgo.webp",
-      "/hogwarts.jpeg",
-      "/r6s.jpeg",
-      "/rocket.jpeg",
-      "/Valorant.webp",
-
-    ],
-  }),
+  data() {
+    return {
+      footerText: 'Random text for footer yes, no, maybe'
+    }
+  }
 };
 </script>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'montserrat', sans-serif;
-  background-color: rgb(241, 130, 45);
-}
-
-header {
-  width: 100vw;
-  background-color: #222;
-  padding: 15px;
-}
-
-img {
+footer {
+  background-color: rgb(0, 0, 0);
+  padding: 10px;
+  text-align: center;
   width: 100%;
+  height: 50px;
+  color: white;
 }
-</style> -->
+</style>
