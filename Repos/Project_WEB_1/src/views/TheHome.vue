@@ -6,8 +6,9 @@ import Carousel from '../components/carousel.vue'
 
 <template>
     <Navbar />
-    <router-view />
     <Carousel :slides="slides" :interval="6000" controls indicators></Carousel>
+    <router-view />
+
 </template>
 
 <script>
