@@ -154,7 +154,7 @@ body {
 }
 
 .carry-view {
-    background: #fff;
+    background: rgb(255, 255, 255);
     border-radius: 4px;
     padding: 20px;
     transition: all 0.2s;
@@ -206,10 +206,10 @@ h3 {
 }
 
 #sort-bar {
-    width: 80%;
+    width: 100%;
     height: 50px;
-    margin-left: 10px;
-    background-color: #f2e0c1;
+    margin-left: 0px;
+    background-color: #f4b18a;
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
@@ -251,4 +251,6 @@ h3 {
 #search-input {
     margin-right: 10px;
 }
+
+.column {}
 </style>

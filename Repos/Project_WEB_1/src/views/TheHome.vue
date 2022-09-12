@@ -20,7 +20,6 @@ export default {
             "/r6s.jpeg",
             "/rocket.jpeg",
             "/Valorant.webp",
-
         ],
     }),
 };
