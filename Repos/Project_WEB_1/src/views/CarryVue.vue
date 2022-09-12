@@ -251,6 +251,4 @@ h3 {
 #search-input {
     margin-right: 10px;
 }
-
-.column {}
 </style>

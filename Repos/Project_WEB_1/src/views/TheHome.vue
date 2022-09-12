@@ -18,7 +18,6 @@ export default {
         slides: [
             "/overwatch.jpeg",
             "/csgo.webp",
-            "/hogwarts.jpeg",
             "/r6s.jpeg",
             "/rocket.jpeg",
             "/Valorant.webp",
