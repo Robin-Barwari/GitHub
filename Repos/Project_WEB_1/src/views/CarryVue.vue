@@ -41,7 +41,7 @@
                     <h3>
                         Price:
                     </h3>
-                    <p>
+                    <p class="price-size">
                         {{ provider.Price }} €
                     </p>
 
@@ -160,14 +160,27 @@ body {
     transition: all 0.2s;
 }
 
+h1 {
+    font-size: 4vw;
+}
+
 h2 {
     font-weight: bold;
     margin-bottom: 15px;
+    font-size: 7vw;
 }
 
 h3 {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 2vw;
+}
+
+.price-size {
+    font-size: 2vw;
+}
+
+.rank-list {
+    font-size: 2vw;
 }
 
 #game-container {
@@ -193,7 +206,7 @@ h3 {
 
 
 .rank-title {
-    font-size: 16px;
+    font-size: 2vw;
     font-weight: 600;
     margin-top: 20px;
 }
