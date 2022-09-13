@@ -196,7 +196,7 @@ h3 {
 }
 
 .content {
-    padding: 30px;
+    padding: 17px;
 }
 
 .game-title {
