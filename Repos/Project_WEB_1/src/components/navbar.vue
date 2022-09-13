@@ -11,7 +11,9 @@ import { RouterLink } from 'vue-router';
         <div class="menu-item">
             <RouterLink to="/carry">Carry</RouterLink>
         </div>
-        <div class="menu-item"><a href="#">Contact</a></div>
+        <div class="menu-item">
+            <RouterLink to="/contact">Contact</RouterLink>
+        </div>
     </nav>
 </template>
   

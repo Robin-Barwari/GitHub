@@ -18,7 +18,7 @@
         </div>
 
         <!-- Where the array of games get rendered as cards -->
-        <div id="provider-container">
+        <div id="game-container">
             <div class="card" v-for="provider in filteredProviders" :key="provider.titelGame">
                 <img :src="provider.img" class="provider-image">
                 <div class="content">
@@ -148,9 +148,9 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 body {
-    padding: 0px;
+    padding: 20px;
 }
 
 .carry-view {
@@ -199,16 +199,16 @@ h3 {
 }
 
 .game-image {
-    width: 5%;
-    max-height: 75px;
+    width: 100%;
+    max-height: 200px;
     padding: -10px -10px;
     ;
 }
 
 #sort-bar {
     width: 100%;
-    height: 50px;
-    margin-left: 0px;
+    //height: 50px;
+    margin-left: 10px;
     background-color: #f4b18a;
     display: flex;
     flex-wrap: wrap;
@@ -217,8 +217,8 @@ h3 {
 
 .sort-button {
     background-color: rgba(0, 0, 0, 0);
-    border: 1px;
-    height: 50px;
+    border: none;
+    //height: 50px;
     height: 100%;
     width: 50px;
 
