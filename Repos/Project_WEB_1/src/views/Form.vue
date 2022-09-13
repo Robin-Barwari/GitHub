@@ -68,9 +68,9 @@ export default {
     // the instance state
     data: function () {
         return {
-            name: "Ubin Borgir",
+            name: " ",
             email: {
-                value: "UbinBorgir@localfatman.com",
+                value: "",
                 valid: true
             },
             features: ["Reactivity", "Encapsulation", "Data Binding"],
@@ -90,6 +90,7 @@ export default {
         // submit form handler
         submit: function () {
             this.submitted = true;
+            event.target.reset();
         },
         // validate by type and value
         validate: function (type, value) {
