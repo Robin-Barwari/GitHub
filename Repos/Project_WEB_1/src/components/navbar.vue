@@ -7,7 +7,9 @@ import { RouterLink } from 'vue-router';
         <div class="menu-item">
             <RouterLink to="/">Home</RouterLink>
         </div>
-        <div class="menu-item"><a href="#">About</a></div>
+        <div class="menu-item">
+            <RouterLink to="/about">About</RouterLink>
+        </div>
         <div class="menu-item">
             <RouterLink to="/carry">Carry</RouterLink>
         </div>
