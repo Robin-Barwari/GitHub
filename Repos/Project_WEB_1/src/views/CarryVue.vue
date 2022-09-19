@@ -1,6 +1,6 @@
 <template>
     <div class="carry-view">
-        <h2 style="text-align: center;">My Providers:</h2>
+        <h2 style="text-align: center;">My Providers</h2>
 
         <!-- Bar containing all sort inputs -->
         <div id="sort-bar">
@@ -25,18 +25,19 @@
                     <h1 class="provider-title">
                         {{ provider.titelGame }}
                     </h1>
-                    <p>
-                        {{ provider.description }}
-                    </p>
                     <span class="rank-span">
 
                         <h3 class="rank-title">
                             Ranks:
                         </h3>
                         <ol class="rank-list">
-                            <li v-for="rank in provider.ranks">- {{ rank }}</li>
+                            <li v-for="rank in provider.ranks"> {{ rank }}</li>
                         </ol>
                     </span>
+
+                    <h3 class="contact-title">
+                        Contact: <h5>{{provider.contactInfo}}</h5>
+                    </h3>
 
                     <h3>
                         Price:
@@ -153,63 +154,6 @@ body {
     padding: 20px;
 }
 
-.carry-view {
-    background: rgb(255, 255, 255);
-    border-radius: 4px;
-    padding: 20px;
-    transition: all 0.2s;
-}
-
-h1 {
-    font-size: 4vw;
-}
-
-h2 {
-    font-weight: bold;
-    margin-bottom: 15px;
-    font-size: 7vw;
-}
-
-h3 {
-    font-weight: 600;
-    font-size: 2vw;
-}
-
-.price-size {
-    font-size: 2vw;
-}
-
-.rank-list {
-    font-size: 2vw;
-}
-
-#game-container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.card {
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0 5px 10px;
-    margin: 10px;
-    width: 30%;
-}
-
-.content {
-    padding: 17px;
-}
-
-.game-title {
-    font-size: 18px;
-    font-weight: 600;
-}
-
-
-.rank-title {
-    font-size: 2vw;
-    font-weight: 600;
-    margin-top: 20px;
-}
 
 .game-image {
     width: 100%;
@@ -220,7 +164,7 @@ h3 {
 
 #sort-bar {
     width: 100%;
-    //height: 50px;
+    height: 50px;
     margin-left: 10px;
     background-color: #f4b18a;
     display: flex;
@@ -231,7 +175,7 @@ h3 {
 .sort-button {
     background-color: rgba(0, 0, 0, 0);
     border: none;
-    //height: 50px;
+    height: 50px;
     height: 100%;
     width: 50px;
 
@@ -263,5 +207,157 @@ h3 {
 
 #search-input {
     margin-right: 10px;
+}
+
+#game-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 601px) {
+    .card {
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0 5px 10px;
+        margin: 10px;
+        width: 23.5%;
+    }
+
+    .carry-view {
+        background: rgb(255, 255, 255);
+        border-radius: 4px;
+        padding: 20px;
+        transition: all 0.2s;
+    }
+
+    h1 {
+        font-size: 3vw;
+    }
+
+    h2 {
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-size: 4vw;
+    }
+
+    h3 {
+        font-weight: 600;
+        font-size: 2vw;
+    }
+
+    h5 {
+        font-weight: 600;
+        font-size: 1.5vw;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .price-size {
+        font-size: 2vw;
+        margin-top: 10px;
+    }
+
+    .rank-list {
+        font-size: 2vw;
+        padding: 20px
+    }
+
+    .card {
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0 5px 10px;
+        margin: 10px;
+        width: 23.5%;
+    }
+
+    .content {
+        padding: 17px;
+    }
+
+    .game-title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+
+    .rank-title {
+        font-size: 2vw;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+
+    .contact-title {
+        font-size: 2vw;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .carry-view {
+        background: rgb(255, 255, 255);
+        border-radius: 4px;
+        padding: 20px;
+        transition: all 0.2s;
+    }
+
+    h1 {
+        font-size: 3vw;
+    }
+
+    h2 {
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-size: 8vw;
+    }
+
+    h3 {
+        font-weight: 600;
+        font-size: 4vw;
+    }
+
+    h5 {
+        font-weight: 600;
+        font-size: 3vw;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .price-size {
+        font-size: 4vw;
+        margin-top: 10px;
+    }
+
+    .rank-list {
+        font-size: vw;
+        padding: 20px
+    }
+
+    .card {
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0 5px 10px;
+        margin: 10px;
+        width: 100%;
+    }
+
+    .content {
+        padding: 17px;
+    }
+
+    .game-title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+
+    .rank-title {
+        font-size: 4vw;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+
+    .contact-title {
+        font-size: 4vw;
+        font-weight: 600;
+        margin-top: 10px;
+    }
 }
 </style>
