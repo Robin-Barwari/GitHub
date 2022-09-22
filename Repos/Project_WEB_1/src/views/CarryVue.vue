@@ -255,7 +255,7 @@ body {
     }
 
     .rank-list {
-        font-size: 2vw;
+        font-size: 1.5vw;
     }
 
     .card {
@@ -324,7 +324,7 @@ body {
     }
 
     .rank-list {
-        font-size: vw;
+        font-size: 2vw;
     }
 
     .card {
