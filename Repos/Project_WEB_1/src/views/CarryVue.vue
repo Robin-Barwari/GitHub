@@ -29,10 +29,8 @@
 
                         <h3 class="rank-title">
                             Ranks:
+                            <p class="rank-list">{{provider.ranks}}</p>
                         </h3>
-                        <ol class="rank-list">
-                            <li v-for="rank in provider.ranks"> {{ rank }}</li>
-                        </ol>
                     </span>
 
                     <h3 class="contact-title">
@@ -65,35 +63,35 @@ export default {
                 {
                     titelGame: 'Overwatch',
                     contactInfo: 'ILike2Win@carry.com',
-                    ranks: ['Grand Master'],
+                    ranks: 'Grand Master',
                     Price: '20',
                     img: '/overwatch_carry.jpeg',
                 },
                 {
                     titelGame: 'Rainbow Six Siege',
                     contactInfo: 'GG2EZ@carry.com',
-                    ranks: ['Diamond II'],
+                    ranks: 'Diamond II',
                     Price: '35',
                     img: '/r6s_carry.webp',
                 },
                 {
                     titelGame: 'CS:GO',
                     contactInfo: 'Putin_nr_1@carry.com',
-                    ranks: ['Gold Nova II'],
+                    ranks: 'Gold Nova II',
                     Price: '5',
                     img: '/csgo_carry.webp',
                 },
                 {
                     titelGame: 'Rocket League',
                     contactInfo: 'I_bad_fotballs@carry.com',
-                    ranks: ['Platinum III'],
+                    ranks: 'Platinum III',
                     Price: '15',
                     img: '/rocket_carry.jpeg',
                 },
                 {
                     titelGame: 'Valorant',
                     contactInfo: 'W3ndig0@carry.com',
-                    ranks: ['Silver II'],
+                    ranks: 'Silver II',
                     Price: '150',
                     img: '/valorant_carry.jpg',
                 },
@@ -257,8 +255,8 @@ body {
     }
 
     .rank-list {
-        font-size: 2vw;
-        padding: 20px
+        font-size: 1.5vw;
+        margin-top: 10px;
     }
 
     .card {
@@ -327,8 +325,7 @@ body {
     }
 
     .rank-list {
-        font-size: vw;
-        padding: 20px
+        font-size: 2vw;
     }
 
     .card {
