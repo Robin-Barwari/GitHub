@@ -5,7 +5,7 @@ import TheHome from './views/TheHome.vue';
 
 <template>
   <Navbar />
-  <TheHome />
+  <RouterView></RouterView>
   <footer>
     <p>{{ footerText}}</p>
   </footer>
@@ -30,5 +30,4 @@ footer {
   height: 50px;
   color: white;
 }
-
 </style>
