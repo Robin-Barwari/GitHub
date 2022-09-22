@@ -11,7 +11,7 @@ import Carousel from '../components/carousel.vue'
 
 </template>
 
-<script>
+<script >
 export default {
     name: 'App',
     components: { Carousel },
