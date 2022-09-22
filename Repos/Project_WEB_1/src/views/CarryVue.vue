@@ -256,6 +256,7 @@ body {
 
     .rank-list {
         font-size: 1.5vw;
+        margin-top: 10px;
     }
 
     .card {
