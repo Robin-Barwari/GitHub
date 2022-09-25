@@ -100,10 +100,22 @@ export default {
     justify-content: center;
 }
 
-.carousel-inner {
-    position: relative;
-    width: 1500px;
-    height: 600px;
-    overflow: hidden;
+
+@media screen and (min-width: 601px) {
+    .carousel-inner {
+        position: relative;
+        width: 1500px;
+        height: 600px;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .carousel-inner {
+        position: relative;
+        width: 600px;
+        height: 300px;
+        overflow: hidden;
+    }
 }
 </style>
