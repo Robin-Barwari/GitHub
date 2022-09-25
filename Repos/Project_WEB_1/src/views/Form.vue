@@ -117,6 +117,33 @@ export default {
 </script>
 
 <style scoped>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'montserrat', sans-serif;
+    background-color: rgb(241, 130, 45);
+}
+
+header {
+    width: 100vw;
+    background-color: #222;
+    padding: 15px;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    padding-top: 25px;
+    text-align: center;
+    font-weight: normal;
+}
+
 a {
     color: #2c3e50;
     text-decoration: none;
@@ -226,6 +253,7 @@ header h1 {
 
 .vue-form .select {
     position: relative;
+    color: rgb(220, 220, 220)
 }
 
 .vue-form .select::after {

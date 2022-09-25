@@ -20,9 +20,9 @@
         <!-- Where the array of games get rendered as cards -->
         <div id="game-container">
             <div class="card" v-for="provider in filteredProviders" :key="provider.titelGame">
-                <img :src="provider.img" class="provider-image">
+                <img :src="provider.img" class="game-image">
                 <div class="content">
-                    <h1 class="provider-title">
+                    <h1 class="game-title">
                         {{ provider.titelGame }}
                     </h1>
                     <span class="rank-span">
@@ -155,7 +155,7 @@ body {
 
 .game-image {
     width: 100%;
-    max-height: 200px;
+    height: 400px;
     padding: -10px -10px;
     ;
 }
@@ -198,13 +198,9 @@ body {
     border: none;
 }
 
-#price-input {
-    width: 30px;
-    margin-right: 10px;
-}
-
 #search-input {
     margin-right: 10px;
+    width: 90px;
 }
 
 #game-container {
@@ -213,11 +209,22 @@ body {
 }
 
 @media screen and (min-width: 601px) {
+
+    #search-input {
+        margin-right: 10px;
+        width: 150px;
+    }
+
+    #price-input {
+        width: 30px;
+        margin-right: 10px;
+    }
+
     .card {
         border-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.3) 0 5px 10px;
         margin: 10px;
-        width: 23.5%;
+        width: 25%;
     }
 
     .carry-view {
@@ -238,7 +245,7 @@ body {
     }
 
     h3 {
-        font-weight: normal;
+        font-weight: bold;
         font-size: 2vw;
     }
 
@@ -256,7 +263,9 @@ body {
 
     .rank-list {
         font-size: 1.5vw;
-        margin-top: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-weight: normal;
     }
 
     .card {
@@ -271,25 +280,35 @@ body {
     }
 
     .game-title {
-        font-size: 18px;
-        font-weight: normal;
+        font-size: 3vw;
+        font-weight: bold;
     }
 
 
     .rank-title {
         font-size: 2vw;
-        font-weight: normal;
+        font-weight: bold;
         margin-top: 20px;
     }
 
     .contact-title {
         font-size: 2vw;
-        font-weight: normal;
+        font-weight: bold;
         margin-top: 10px;
     }
 }
 
 @media screen and (max-width: 600px) {
+    #price-input {
+        width: 25px;
+        margin-right: 10px;
+    }
+
+    #search-input {
+        margin-right: 10px;
+        width: 90px;
+    }
+
     .carry-view {
         background: rgb(255, 255, 255);
         border-radius: 4px;
@@ -308,7 +327,7 @@ body {
     }
 
     h3 {
-        font-weight: normal;
+        font-weight: bold;
         font-size: 4vw;
     }
 
@@ -325,7 +344,9 @@ body {
     }
 
     .rank-list {
-        font-size: 2vw;
+        padding-top: 10px;
+        font-size: 4vw;
+        font-weight: normal;
     }
 
     .card {
@@ -340,20 +361,20 @@ body {
     }
 
     .game-title {
-        font-size: 18px;
-        font-weight: 600;
+        font-size: 7vw;
+        font-weight: bold;
     }
 
 
     .rank-title {
         font-size: 4vw;
-        font-weight: normal;
+        font-weight: bold;
         margin-top: 20px;
     }
 
     .contact-title {
         font-size: 4vw;
-        font-weight: normal;
+        font-weight: bold;
         margin-top: 10px;
     }
 }

@@ -10,7 +10,7 @@ import Carousel from '../components/carousel.vue'
     <div class="container">
         <img src="road_home.png">
         <p>
-            We have a variety of player in different ranks that can help you rank up. <br>
+            We have a variety of players in different ranks that can help you rank up. <br>
             Try our service today and wittness your rank go from Wood III to Diamond I
         </p>
     </div>
@@ -42,7 +42,7 @@ export default {
 };
 </script>
     
-<style>
+<style scoped>
 * {
     margin: 0;
     padding: 0;
