@@ -6,6 +6,15 @@ import Carousel from '../components/carousel.vue'
 
 <template>
     <Carousel :slides="slides" :interval="6000" controls indicators></Carousel>
+    <h1>Hard stuck on a rank?</h1>
+    <div class="container">
+        <img src="road_home.png" class="responsive-road">
+        <p>
+            We have a variety of player in different ranks that can help you rank up, <br>
+            try our service today and wittness your rank go from wood III to diamond I
+        </p>
+    </div>
+
 </template>
 
 <script >
@@ -44,5 +53,20 @@ header {
 
 img {
     width: 100%;
+}
+
+h1 {
+    padding-top: 25px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container img {
+    width: 300px;
 }
 </style>

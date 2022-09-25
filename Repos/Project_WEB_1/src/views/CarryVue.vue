@@ -232,18 +232,18 @@ body {
     }
 
     h2 {
-        font-weight: bold;
+        font-weight: normal;
         margin-bottom: 15px;
         font-size: 4vw;
     }
 
     h3 {
-        font-weight: 600;
+        font-weight: normal;
         font-size: 2vw;
     }
 
     h5 {
-        font-weight: 600;
+        font-weight: normal;
         font-size: 1.5vw;
         margin-top: 10px;
         margin-bottom: 20px;
@@ -272,19 +272,19 @@ body {
 
     .game-title {
         font-size: 18px;
-        font-weight: 600;
+        font-weight: normal;
     }
 
 
     .rank-title {
         font-size: 2vw;
-        font-weight: 600;
+        font-weight: normal;
         margin-top: 20px;
     }
 
     .contact-title {
         font-size: 2vw;
-        font-weight: 600;
+        font-weight: normal;
         margin-top: 10px;
     }
 }
@@ -308,12 +308,12 @@ body {
     }
 
     h3 {
-        font-weight: 600;
+        font-weight: normal;
         font-size: 4vw;
     }
 
     h5 {
-        font-weight: 600;
+        font-weight: normal;
         font-size: 3vw;
         margin-top: 10px;
         margin-bottom: 20px;
@@ -347,13 +347,13 @@ body {
 
     .rank-title {
         font-size: 4vw;
-        font-weight: 600;
+        font-weight: normal;
         margin-top: 20px;
     }
 
     .contact-title {
         font-size: 4vw;
-        font-weight: 600;
+        font-weight: normal;
         margin-top: 10px;
     }
 }
