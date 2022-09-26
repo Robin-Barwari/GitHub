@@ -1,14 +1,12 @@
 <script setup>
 import Navbar from './components/Navbar.vue';
-import TheHome from './views/TheHome.vue';
+import Footer from './components/Footer.vue';
 </script>
 
 <template>
   <Navbar />
   <RouterView></RouterView>
-  <footer>
-    <p>{{ footerText}}</p>
-  </footer>
+  <Footer></Footer>
 </template>
 
 <script>
@@ -22,12 +20,5 @@ export default {
 </script>
 
 <style>
-footer {
-  background-color: rgb(0, 0, 0);
-  padding: 10px;
-  text-align: center;
-  width: 100%;
-  height: 50px;
-  color: white;
-}
+
 </style>

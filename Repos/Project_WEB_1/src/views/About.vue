@@ -9,7 +9,7 @@ export default {
     <body>
         <div class="flex xs12 sm6 mb-3">
             <div class="card" style="height: auto">
-                <div class="container fluid">
+                <div class="container">
                     <div class="layout">
                         <div class="flex pa-3">
                             <h1>About Us</h1>
@@ -53,6 +53,8 @@ export default {
                         <div class="flex pa-3 hidden-sm-and-down">
                             <h2 class="py-1 ma-2">Artist Picks</h2>
                             <img src="/gamer1.jpeg" img-width="100" />
+                            <img src="/gamer2.jpeg" img-width="100" />
+                            <img src="/gamer3.jpeg" img-width="100" />
 
                         </div>
                     </div>
@@ -88,6 +90,61 @@ h1 {
     padding-top: 25px;
     text-align: center;
     font-weight: normal;
+    color: white;
+}
+
+h2 {
+    padding-top: 25px;
+    text-align: center;
+    font-weight: normal;
+    color: white;
+}
+
+p {
+    color: rgb(220, 220, 220);
+}
+
+.container img {
+    width: 300px;
+    height: 200px;
+}
+
+@media screen and (min-width: 601px) {
+    h1 {
+        padding-top: 25px;
+        text-align: center;
+        font-weight: normal;
+    }
+
+    .container img {
+        width: 300px;
+    }
+
+
+    .container p {
+        font-size: 20px;
+        padding-left: 20px;
+        padding-right: 10px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        text-align: center;
+        font-weight: normal;
+    }
+
+    .container img {
+        width: 150px;
+    }
+
+    .container p {
+        font-size: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: 540;
+    }
 }
 </style>
 
