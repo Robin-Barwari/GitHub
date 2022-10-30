@@ -1,8 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const { short } = require("webidl-conversions");
 
 const {Drivers} = require("./Drivers");
 const {Items} = require("./Items");
+const {Orders} = require("./Orders")
 
 const app = express();
 
@@ -54,6 +56,30 @@ app.put("/items/:item", async (req, res) => {
     await Items.updateOne({ item }, req.body);
     const updatedItems = await Items.findById(item);
     return res.status(200).json(updatedItems);
+});
+
+// Orders
+app.get("/orders", async (req, res) => {
+    const allOrders = await Orders.find({ date: {$gte: "2022-01-01"}}).sort({date: "asc"});
+    return res.status(200).json(allOrders);
+});
+
+app.get("/orders/:order", async (req, res) => {
+    const order = await Orders.find({order: req.params.order});
+    return res.status(200).json(order);
+});
+
+app.post("/orders", async (req, res) => {
+    const newOrders = new Orders(req.body);
+    const insertedOrders = await newOrders.save();
+    return res.status(201).json(insertedOrders);
+  });
+
+app.put("/orders/:order", async (req, res) => {
+    const { order } = req.params;
+    await Orders.updateOne({ order }, req.body);
+    const updatedOrders = await Orders.findById(order);
+    return res.status(200).json(updatedOrders);
 });
 
 
