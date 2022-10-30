@@ -11,12 +11,12 @@ const ordersSchema = new mongoose.Schema({
             type: String,
             required: true,
             lowercase: true
-        },
-        date: {
-            type: Date,
-            required: true
         }
-    }]
+    }],
+    date: {
+        type: Date,
+        required: true
+    }
 });
 
 const Orders = mongoose.model("Orders", ordersSchema);

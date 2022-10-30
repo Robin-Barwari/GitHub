@@ -4,7 +4,8 @@ const { short } = require("webidl-conversions");
 
 const {Drivers} = require("./Drivers");
 const {Items} = require("./Items");
-const {Orders} = require("./Orders")
+const {Orders} = require("./Orders");
+const {Employee} = require("./Employee")
 
 const app = express();
 
@@ -60,7 +61,7 @@ app.put("/items/:item", async (req, res) => {
 
 // Orders
 app.get("/orders", async (req, res) => {
-    const allOrders = await Orders.find({ date: {$gte: "2022-01-01"}}).sort({date: "asc"});
+    const allOrders = await Orders.find({date: {$gte: "2022-01-01"}}).sort({date: "asc"});
     return res.status(200).json(allOrders);
 });
 
@@ -80,6 +81,30 @@ app.put("/orders/:order", async (req, res) => {
     await Orders.updateOne({ order }, req.body);
     const updatedOrders = await Orders.findById(order);
     return res.status(200).json(updatedOrders);
+});
+
+// Employee
+app.get("/employee", async (req, res) => {
+    const allEmployee = await Employee.find();
+    return res.status(200).json(allEmployee);
+});
+
+app.get("/employee/:name", async (req, res) => {
+    const name = await Employee.find({name: req.params.name});
+    return res.status(200).json(name);
+});
+
+app.post("/employee", async (req, res) => {
+    const newEmployee = new Employee(req.body);
+    const insertedEmployee = await newEmployee.save();
+    return res.status(201).json(insertedEmployee);
+  });
+
+app.put("/employee/:name", async (req, res) => {
+    const { name } = req.params;
+    await Employee.updateOne({ name }, req.body);
+    const updatedEmployee = await Employee.findById(name);
+    return res.status(200).json(updatedEmployee);
 });
 
 
