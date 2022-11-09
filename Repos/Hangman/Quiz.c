@@ -32,7 +32,7 @@ int main()
 
       printf("guess: ");
       scanf(" %c", &guess);
-      scanf("%c"); //clear \n from input buffer
+      scanf("%*c"); //clear \n from input buffer
 
       guess = toupper(guess);
 
